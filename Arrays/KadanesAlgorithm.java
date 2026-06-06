@@ -1,7 +1,7 @@
 public class KadanesAlgorithm {
     static int maxSubarraySum(int[] nums) {
         int sum = 0;
-        int maxSum = 0;
+        int maxSum = Integer.MIN_VALUE;
         for(int num : nums) {
             sum += num;
             maxSum = Math.max(maxSum, sum);

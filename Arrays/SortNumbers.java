@@ -1,28 +1,28 @@
 public class SortNumbers {
     static void sort(int[] nums) {
-        int left = 0;
+        int low = 0;
         int mid = 0;
-        int right = nums.length-1;
+        int high = nums.length-1;
 
-        while(mid <= right) {
+        while(mid <= high) {
             if(nums[mid] == 0) {
-                int temp = nums[left];
-                nums[left] = nums[mid];
+                int temp = nums[low];
+                nums[low] = nums[mid];
                 nums[mid] = temp;
+                low++;
                 mid++;
-                left++;
             } else if(nums[mid] == 1) {
                 mid++;
-            } else { //mid == 2
-                int temp = nums[right];
-                nums[right] = nums[mid];
+            } else {
+                int temp = nums[high];
+                nums[high] = nums[mid];
                 nums[mid] = temp;
-                right--;
+                high--;
             }
         }
     }
-    public static void main (String[] args) {
-        int[] nums = {2,0,2,1,1,0};
+    public static void main(String[] args) {
+        int[] nums = {2,0,2,1,1,0,0};
         sort(nums);
         for(int num : nums) {
             System.out.print(num + " ");

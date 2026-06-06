@@ -1,9 +1,9 @@
 import java.util.*;
 public class MajorityElement {
-    static int majorityElement(int[] nums) {
+    static int majorElement(int[] nums) {
         HashMap<Integer,Integer> map = new HashMap<>();
         for(int num : nums) {
-            map.put(num,map.getOrDefault(num,0) + 1);
+            map.put(num, map.getOrDefault(num,0) + 1);
             if(map.get(num) > nums.length/2) {
                 return num;
             }
@@ -12,7 +12,7 @@ public class MajorityElement {
     }
 
     public static void main(String[] args) {
-        int[] nums = {2,2,1,1,1,2,2};
-        System.out.print(majorityElement(nums));
+        int[] nums = {2,2,1,1,1,1,2,2,2};
+        System.out.println(majorElement(nums));
     }
 }
